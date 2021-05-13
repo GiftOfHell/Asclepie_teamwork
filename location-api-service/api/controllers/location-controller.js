@@ -23,7 +23,7 @@ const jsf = require('json-schema-faker');
   we specify that in the exports of this module that 'hello' maps to the function named 'hello'
  */
 module.exports = {
-  weathers: getWeathers
+  locations: getLocations
 };
 
 /*
@@ -31,7 +31,7 @@ module.exports = {
   Param 1: a handle to the request object
   Param 2: a handle to the response object
  */
-function getWeathers(req, res) {
+function getLocations(req, res) {
   // this sends back a JSON response which is a single string
   res.json([{
 
