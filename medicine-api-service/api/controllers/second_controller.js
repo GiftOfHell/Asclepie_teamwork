@@ -39,11 +39,19 @@ module.exports = {
 function medicineInfo(req, res) {
   // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
   var medicineNames = ["Protargol", "Baclofen", "Dapsone", "Dopamine", "Famotidine", "Granisetron", "Hydralazine", "Ketoconazole", "Methadone", "Potassium", "Thiotepa", "Voxelotor"];
-  var medicineName = medicineNames[Math.floor(Math.random() * medicineNames.length)];
+  var medicineName1 = medicineNames[Math.floor(Math.random() * medicineNames.length)];
+  var medicineName2 = medicineNames[Math.floor(Math.random() * medicineNames.length)];
+  var medicineName3 = medicineNames[Math.floor(Math.random() * medicineNames.length)];
   // this sends back a JSON response which is a single string
   res.json([{
-    "name": "" + medicineName,
-    "amount": "" + faker.datatype.number({'min': 1, 'max': 35}),
-    "address": "" + faker.address.streetAddress(),
-  }]); 
+    "name1": "" + medicineName1,
+    "amount1": "" + faker.datatype.number({'min': 1, 'max': 35}),
+    "address1": "" + faker.address.streetAddress(),
+    "name2": "" + medicineName2,
+    "amount2": "" + faker.datatype.number({'min': 1, 'max': 35}),
+    "address2": "" + faker.address.streetAddress(),
+    "name3": "" + medicineName3,
+    "amount3": "" + faker.datatype.number({'min': 1, 'max': 35}),
+    "address3": "" + faker.address.streetAddress(),
+  }]);
 }

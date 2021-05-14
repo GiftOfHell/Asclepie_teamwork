@@ -1,0 +1,104 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Medicine description service",
+    "version" : "0.1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:10010/api/v1"
+  } ],
+  "paths" : {
+    "/medicines" : {
+      "get" : {
+        "description" : "Returns list of medicine characteristics",
+        "operationId" : "medicines",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "description" : "The name of the medicine",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MedicinesResponse"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-swagger-router-controller" : "second_controller"
+    },
+    "/swagger" : {
+      "x-swagger-pipe" : "swagger_raw"
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "MedicinesResponse" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Medicine"
+        }
+      },
+      "Medicine" : {
+        "required" : [ "address1", "address2", "address3", "amount1", "amount2", "amount3", "name1", "name2", "name3" ],
+        "type" : "object",
+        "properties" : {
+          "name1" : {
+            "type" : "string"
+          },
+          "amount1" : {
+            "type" : "string"
+          },
+          "address1" : {
+            "type" : "string"
+          },
+          "name2" : {
+            "type" : "string"
+          },
+          "amount2" : {
+            "type" : "string"
+          },
+          "address2" : {
+            "type" : "string"
+          },
+          "name3" : {
+            "type" : "string"
+          },
+          "amount3" : {
+            "type" : "string"
+          },
+          "address3" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ErrorResponse" : {
+        "required" : [ "message" ],
+        "type" : "object",
+        "properties" : {
+          "message" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}
