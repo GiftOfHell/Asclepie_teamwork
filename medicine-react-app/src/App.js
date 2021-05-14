@@ -28,7 +28,7 @@ function App() {
           </li>
 
           <li>
-            <Link to="/medicines">Weather today</Link>
+            <Link to="/medicine">Weather today</Link>
           </li>
 
 
@@ -44,7 +44,7 @@ function App() {
               <About />
             </Route>
 
-            <Route path="/medicines">
+            <Route path="/medicine">
               <h1>Weather Today</h1>
               Click at the button to reload the page and see weather today!
               <MedicineTable />

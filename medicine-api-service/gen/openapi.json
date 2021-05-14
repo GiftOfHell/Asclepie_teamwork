@@ -1,21 +1,21 @@
 {
   "openapi" : "3.0.1",
   "info" : {
-    "title" : "Medicine description service",
+    "title" : "Medicine service",
     "version" : "0.1.0"
   },
   "servers" : [ {
     "url" : "http://localhost:10010/api/v1"
   } ],
   "paths" : {
-    "/medicines" : {
+    "/medicine" : {
       "get" : {
-        "description" : "Returns list of medicine characteristics",
+        "description" : "Returns list of medicines",
         "operationId" : "medicines",
         "parameters" : [ {
-          "name" : "name",
+          "name" : "date",
           "in" : "query",
-          "description" : "The name of the medicine",
+          "description" : "Filtering date",
           "schema" : {
             "type" : "string"
           }
@@ -43,7 +43,7 @@
           }
         }
       },
-      "x-swagger-router-controller" : "second_controller"
+      "x-swagger-router-controller" : "medicine-controller"
     },
     "/swagger" : {
       "x-swagger-pipe" : "swagger_raw"
@@ -58,16 +58,33 @@
         }
       },
       "Medicine" : {
-        "required" : [ "address", "amount", "name" ],
         "type" : "object",
         "properties" : {
-          "name" : {
+          "name1" : {
             "type" : "string"
           },
-          "amount" : {
+          "amount1" : {
             "type" : "string"
           },
-          "address" : {
+          "address1" : {
+            "type" : "string"
+          },
+          "name2" : {
+            "type" : "string"
+          },
+          "amount2" : {
+            "type" : "string"
+          },
+          "address2" : {
+            "type" : "string"
+          },
+          "name3" : {
+            "type" : "string"
+          },
+          "amount3" : {
+            "type" : "string"
+          },
+          "address3" : {
             "type" : "string"
           }
         }

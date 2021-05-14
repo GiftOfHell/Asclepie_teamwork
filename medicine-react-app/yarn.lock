@@ -10792,7 +10792,7 @@ typedarray@^0.0.6:
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
 "typescript-fetch-api@file:gen/api":
-  version "0.0.0"
+  version "1.0.0"
 
 typescript-fsa-reducers@^1.2.2:
   version "1.2.2"
