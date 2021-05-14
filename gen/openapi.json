@@ -58,7 +58,6 @@
         }
       },
       "Medicine" : {
-        "required" : [ "address1", "address2", "address3", "amount1", "amount2", "amount3", "name1", "name2", "name3" ],
         "type" : "object",
         "properties" : {
           "name1" : {
