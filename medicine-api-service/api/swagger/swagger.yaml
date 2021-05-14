@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   version: "0.1.0"
-  title: Location service
+  title: Medicine service
 # during dev, should point to your local machine
 host: localhost:10010
 # basePath prefixes all resource paths 
@@ -17,6 +17,71 @@ consumes:
 produces:
   - application/json
 paths:
+
+  /medicine:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: medicine-controller
+    get:
+      description: Returns list of medicines
+      # used as the method name of the controller
+      operationId: medicines
+      parameters:
+        - name: date
+          in: query
+          description: Filtering date
+          required: false
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/MedicinesResponse"
+            # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+
+MedicinesResponse:
+      type: array
+      items:
+        $ref: "#/definitions/Medicine"
+  
+  Medicine:
+    properties:
+      name1:
+        type: string
+      amount1:
+        type: string
+      address1:
+        type: string
+      name2:
+        type: string
+      amount2:
+        type: string
+      address2:
+        type: string
+      name3:
+        type: string
+      amount3:
+        type: string
+      address3:
+        type: string
+        
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+        
+        
   /location:
     # binds a127 app logic to a route
     x-swagger-router-controller: location-controller
@@ -36,7 +101,7 @@ paths:
           schema:
             # a pointer to a definition
             $ref: "#/definitions/LocationsResponse"
-        # responses may fall through to errors
+            # responses may fall through to errors
         default:
           description: Error
           schema:
@@ -47,7 +112,7 @@ paths:
 # complex objects have schema definitions
 definitions:
 
-  LocationsResponse:
+LocationsResponse:
       type: array
       items:
         $ref: "#/definitions/Location"
@@ -86,13 +151,7 @@ definitions:
         type: string
       image3:
         type: string
-     
-      
-      
-      
-      
-      
-      
+        
   ErrorResponse:
     required:
       - message

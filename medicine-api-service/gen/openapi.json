@@ -1,18 +1,19 @@
 {
   "openapi" : "3.0.1",
   "info" : {
-    "title" : "Location service",
+    "title" : "Medicine service",
     "version" : "0.1.0"
   },
   "servers" : [ {
     "url" : "http://localhost:10010/api/v1"
   } ],
   "paths" : {
-    "/location" : {
+    
+    "/medicine" : {
       "get" : {
-        "description" : "Returns list of medicine locations",
-        "operationId" : "locations",
-        "parameters" : [ {
+        "description" : "Returns list of medicines",
+        "operationId" : "medicines",
+    "parameters" : [ {
           "name" : "date",
           "in" : "query",
           "description" : "Filtering date",
@@ -26,7 +27,102 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/LocationsResponse"
+                  "$ref" : "#/components/schemas/MedicinesResponse"
+                  }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-swagger-router-controller" : "medicine-controller"
+      },
+    "/swagger" : {
+      "x-swagger-pipe" : "swagger_raw"
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "MedicinesResponse" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Medicine"
+        }
+      },
+      "Medicine" : {
+        "type" : "object",
+        "properties" : {
+          "name1" : {
+            "type" : "string"
+          },
+          "amount1" : {
+            "type" : "string"
+          },
+          "address1" : {
+            "type" : "string"
+          },
+          "name2" : {
+            "type" : "string"
+          },
+          "amount2" : {
+            "type" : "string"
+          },
+          "address2" : {
+            "type" : "string"
+          },
+          "name3" : {
+            "type" : "string"
+          },
+          "amount3" : {
+            "type" : "string"
+          },
+          "address3" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ErrorResponse" : {
+        "required" : [ "message" ],
+        "type" : "object",
+        "properties" : {
+          "message" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}
+    
+    
+    "/location" : {
+      "get" : {
+        "description" : "Returns list of medicine locations",
+        "operationId" : "locations",
+    "parameters" : [ {
+          "name" : "date",
+          "in" : "query",
+          "description" : "Filtering date",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MedicinesResponse"
                 }
               }
             }
@@ -43,8 +139,8 @@
           }
         }
       },
-      "x-swagger-router-controller" : "location-controller"
-    },
+      "x-swagger-router-controller" : "medicine-controller"
+      },
     "/swagger" : {
       "x-swagger-pipe" : "swagger_raw"
     }
@@ -102,10 +198,10 @@
           },
           "address3" : {
             "type" : "string"
-          },
+            },
           "image3" : {
             "type" : "string"
-          }
+            }
         }
       },
       "ErrorResponse" : {
