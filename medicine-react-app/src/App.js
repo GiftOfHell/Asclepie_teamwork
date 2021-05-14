@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
 import MedicineTable from "./components/MedicineTable.js";
+import LocationTable from "./components/LocationTable.js";
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,7 +31,10 @@ function App() {
           <li>
             <Link to="/medicine">Weather today</Link>
           </li>
-
+          
+          <li>
+            <Link to="/location">Weather today</Link>
+          </li>
 
 
         </ul>
@@ -48,6 +52,12 @@ function App() {
               <h1>Weather Today</h1>
               Click at the button to reload the page and see weather today!
               <MedicineTable />
+            </Route>
+
+            <Route path="/location">
+              <h1>Weather Today</h1>
+              Click at the button to reload the page and see weather today!
+              <LocationTable />
             </Route>
 
 
@@ -88,6 +98,5 @@ function About() {
     </div>
   );
 }
-
 
 export default App;

@@ -17,6 +17,7 @@ consumes:
 produces:
   - application/json
 paths:
+
   /medicine:
     # binds a127 app logic to a route
     x-swagger-router-controller: medicine-controller
@@ -36,7 +37,7 @@ paths:
           schema:
             # a pointer to a definition
             $ref: "#/definitions/MedicinesResponse"
-        # responses may fall through to errors
+            # responses may fall through to errors
         default:
           description: Error
           schema:
@@ -47,7 +48,7 @@ paths:
 # complex objects have schema definitions
 definitions:
 
-  MedicinesResponse:
+MedicinesResponse:
       type: array
       items:
         $ref: "#/definitions/Medicine"
@@ -72,8 +73,85 @@ definitions:
         type: string
       address3:
         type: string
-      
-      
+        
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+        
+        
+  /location:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: location-controller
+    get:
+      description: Returns list of medicine locations
+      # used as the method name of the controller
+      operationId: locations
+      parameters:
+        - name: date
+          in: query
+          description: Filtering date
+          required: false
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/LocationsResponse"
+            # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+
+LocationsResponse:
+      type: array
+      items:
+        $ref: "#/definitions/Location"
+  
+  Location:
+    required:
+      - country1
+    properties:
+      country1:
+        type: string
+      city1:
+        type: string
+      street1:
+        type: string
+      address1:
+        type: string
+      image1:
+        type: string
+      country2:
+        type: string
+      city2:
+        type: string
+      street2:
+        type: string
+      address2:
+        type: string
+      image2:
+        type: string
+      country3:
+        type: string
+      city3:
+        type: string
+      street3:
+        type: string
+      address3:
+        type: string
+      image3:
+        type: string
+        
   ErrorResponse:
     required:
       - message
