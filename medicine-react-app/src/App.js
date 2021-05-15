@@ -62,38 +62,10 @@ function App() {
                       <a href="index.html">Home</a>
                     </li>
                     <li>
-                      <a href="shop.html">Store</a>
+                      <Link to="/medicine">Medicine</Link>
                     </li>
-                    <li class="has-children">
-                      <a href="#">Dropdown</a>
-                      <ul class="dropdown">
-                        <li>
-                          <a href="#">Supplements</a>
-                        </li>
-                        <li class="has-children">
-                          <a href="#">Vitamins</a>
-                          <ul class="dropdown">
-                            <li>
-                              <a href="#">Supplements</a>
-                            </li>
-                            <li>
-                              <a href="#">Vitamins</a>
-                            </li>
-                            <li>
-                              <a href="#">Diet &amp; Nutrition</a>
-                            </li>
-                            <li>
-                              <a href="#">Tea &amp; Coffee</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="#">Diet &amp; Nutrition</a>
-                        </li>
-                        <li>
-                          <a href="#">Tea &amp; Coffee</a>
-                        </li>
-                      </ul>
+                    <li>
+                      <Link to="/location">Location</Link>
                     </li>
                     <li>
                       <a href="about.html">About</a>
@@ -197,239 +169,26 @@ function App() {
 
         <div class="site-section">
           <div class="container">
-            <div class="row">
-              <div class="title-section text-center col-12">
-                <h2 class="text-uppercase">Popular Products</h2>
-              </div>
-            </div>
+            <div className="App">
+              <section>
+                <Switch>
+                  <Route path="/medicine">
+                    <div class="row">
+                      <div class="title-section text-center col-12">
+                        <h2 class="text-uppercase">Popular Products</h2>
+                      </div>
+                    </div>
+                    <MedicineTable />
+                  </Route>
 
-            <div class="row">
-              <div class="col-sm-6 col-lg-4 text-center item mb-4">
-                <span class="tag">Sale</span>
-                <a href="shop-single.html">
-                  {" "}
-                  <img src="images/product_01.png" alt="Image" />
-                </a>
-                <h3 class="text-dark">
-                  <a href="shop-single.html">Bioderma</a>
-                </h3>
-                <p class="price">
-                  <del>95.00</del> &mdash; $55.00
-                </p>
-              </div>
-              <div class="col-sm-6 col-lg-4 text-center item mb-4">
-                <a href="shop-single.html">
-                  {" "}
-                  <img src="images/product_02.png" alt="Image" />
-                </a>
-                <h3 class="text-dark">
-                  <a href="shop-single.html">Chanca Piedra</a>
-                </h3>
-                <p class="price">$70.00</p>
-              </div>
-              <div class="col-sm-6 col-lg-4 text-center item mb-4">
-                <a href="shop-single.html">
-                  {" "}
-                  <img src="images/product_03.png" alt="Image" />
-                </a>
-                <h3 class="text-dark">
-                  <a href="shop-single.html">Umcka Cold Care</a>
-                </h3>
-                <p class="price">$120.00</p>
-              </div>
-
-              <div class="col-sm-6 col-lg-4 text-center item mb-4">
-                <a href="shop-single.html">
-                  {" "}
-                  <img src="images/product_04.png" alt="Image" />
-                </a>
-                <h3 class="text-dark">
-                  <a href="shop-single.html">Cetyl Pure</a>
-                </h3>
-                <p class="price">
-                  <del>45.00</del> &mdash; $20.00
-                </p>
-              </div>
-              <div class="col-sm-6 col-lg-4 text-center item mb-4">
-                <a href="shop-single.html">
-                  {" "}
-                  <img src="images/product_05.png" alt="Image" />
-                </a>
-                <h3 class="text-dark">
-                  <a href="shop-single.html">CLA Core</a>
-                </h3>
-                <p class="price">$38.00</p>
-              </div>
-              <div class="col-sm-6 col-lg-4 text-center item mb-4">
-                <span class="tag">Sale</span>
-                <a href="shop-single.html">
-                  {" "}
-                  <img src="images/product_06.png" alt="Image" />
-                </a>
-                <h3 class="text-dark">
-                  <a href="shop-single.html">Poo Pourri</a>
-                </h3>
-                <p class="price">
-                  <del>$89</del> &mdash; $38.00
-                </p>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-12 text-center">
-                <a href="shop.html" class="btn btn-primary px-4 py-3">
-                  View All Products
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="site-section bg-light">
-          <div class="container">
-            <div class="row">
-              <div class="title-section text-center col-12">
-                <h2 class="text-uppercase">New Products</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 block-3 products-wrap">
-                <div class="nonloop-block-3 owl-carousel">
-                  <div class="text-center item mb-4">
-                    <a href="shop-single.html">
-                      {" "}
-                      <img src="images/product_03.png" alt="Image" />
-                    </a>
-                    <h3 class="text-dark">
-                      <a href="shop-single.html">Umcka Cold Care</a>
-                    </h3>
-                    <p class="price">$120.00</p>
-                  </div>
-
-                  <div class="text-center item mb-4">
-                    <a href="shop-single.html">
-                      {" "}
-                      <img src="images/product_01.png" alt="Image" />
-                    </a>
-                    <h3 class="text-dark">
-                      <a href="shop-single.html">Umcka Cold Care</a>
-                    </h3>
-                    <p class="price">$120.00</p>
-                  </div>
-
-                  <div class="text-center item mb-4">
-                    <a href="shop-single.html">
-                      {" "}
-                      <img src="images/product_02.png" alt="Image" />
-                    </a>
-                    <h3 class="text-dark">
-                      <a href="shop-single.html">Umcka Cold Care</a>
-                    </h3>
-                    <p class="price">$120.00</p>
-                  </div>
-
-                  <div class="text-center item mb-4">
-                    <a href="shop-single.html">
-                      {" "}
-                      <img src="images/product_04.png" alt="Image" />
-                    </a>
-                    <h3 class="text-dark">
-                      <a href="shop-single.html">Umcka Cold Care</a>
-                    </h3>
-                    <p class="price">$120.00</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="site-section">
-          <div class="container">
-            <div class="row">
-              <div class="title-section text-center col-12">
-                <h2 class="text-uppercase">Testimonials</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 block-3 products-wrap">
-                <div class="nonloop-block-3 no-direction owl-carousel">
-                  <div class="testimony">
-                    <blockquote>
-                      <img
-                        src="images/person_1.jpg"
-                        alt="Image"
-                        class="img-fluid w-25 mb-4 rounded-circle"
-                      />
-                      <p>
-                        &ldquo;Lorem ipsum dolor, sit amet consectetur
-                        adipisicing elit. Nemo omnis voluptatem consectetur quam
-                        tempore obcaecati maiores voluptate aspernatur iusto
-                        eveniet, placeat ab quod tenetur ducimus. Minus ratione
-                        sit quaerat unde.&rdquo;
-                      </p>
-                    </blockquote>
-
-                    <p>&mdash; Kelly Holmes</p>
-                  </div>
-
-                  <div class="testimony">
-                    <blockquote>
-                      <img
-                        src="images/person_2.jpg"
-                        alt="Image"
-                        class="img-fluid w-25 mb-4 rounded-circle"
-                      />
-                      <p>
-                        &ldquo;Lorem ipsum dolor, sit amet consectetur
-                        adipisicing elit. Nemo omnis voluptatem consectetur quam
-                        tempore obcaecati maiores voluptate aspernatur iusto
-                        eveniet, placeat ab quod tenetur ducimus. Minus ratione
-                        sit quaerat unde.&rdquo;
-                      </p>
-                    </blockquote>
-
-                    <p>&mdash; Rebecca Morando</p>
-                  </div>
-
-                  <div class="testimony">
-                    <blockquote>
-                      <img
-                        src="images/person_3.jpg"
-                        alt="Image"
-                        class="img-fluid w-25 mb-4 rounded-circle"
-                      />
-                      <p>
-                        &ldquo;Lorem ipsum dolor, sit amet consectetur
-                        adipisicing elit. Nemo omnis voluptatem consectetur quam
-                        tempore obcaecati maiores voluptate aspernatur iusto
-                        eveniet, placeat ab quod tenetur ducimus. Minus ratione
-                        sit quaerat unde.&rdquo;
-                      </p>
-                    </blockquote>
-
-                    <p>&mdash; Lucas Gallone</p>
-                  </div>
-
-                  <div class="testimony">
-                    <blockquote>
-                      <img
-                        src="images/person_4.jpg"
-                        alt="Image"
-                        class="img-fluid w-25 mb-4 rounded-circle"
-                      />
-                      <p>
-                        &ldquo;Lorem ipsum dolor, sit amet consectetur
-                        adipisicing elit. Nemo omnis voluptatem consectetur quam
-                        tempore obcaecati maiores voluptate aspernatur iusto
-                        eveniet, placeat ab quod tenetur ducimus. Minus ratione
-                        sit quaerat unde.&rdquo;
-                      </p>
-                    </blockquote>
-
-                    <p>&mdash; Andrew Neel</p>
-                  </div>
-                </div>
-              </div>
+                  <Route path="/location">
+                    <h1>Weather Today</h1>
+                    Click at the button to reload the page and see weather
+                    today!
+                    <LocationTable />
+                  </Route>
+                </Switch>
+              </section>
             </div>
           </div>
         </div>
@@ -537,7 +296,6 @@ function App() {
       <script src="js/owl.carousel.min.js"></script>
       <script src="js/jquery.magnific-popup.min.js"></script>
       <script src="js/aos.js"></script>
-
       <script src="js/main.js"></script>
     </Router>
   );

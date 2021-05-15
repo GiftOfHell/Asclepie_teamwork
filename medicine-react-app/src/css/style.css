@@ -1505,3 +1505,24 @@ a:hover {
 .image_hero1 {
   background-image: url("../images/hero_1.jpg");
 }
+
+.image_product1 {
+  background-image: url("../images/product_01.png");
+  width: 220px;
+  height: 320px;
+  margin-left: 40px;
+}
+
+.image_product2 {
+  background-image: url("../images/product_02.png");
+  width: 220px;
+  height: 320px;
+  margin-left: 40px;
+}
+
+.image_product3 {
+  background-image: url("../images/product_03.png");
+  width: 220px;
+  height: 320px;
+  margin-left: 40px;
+}
