@@ -182,9 +182,6 @@ function App() {
                   </Route>
 
                   <Route path="/location">
-                    <h1>Weather Today</h1>
-                    Click at the button to reload the page and see weather
-                    today!
                     <LocationTable />
                   </Route>
                 </Switch>

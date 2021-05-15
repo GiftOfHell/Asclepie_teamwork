@@ -1526,3 +1526,27 @@ a:hover {
   height: 320px;
   margin-left: 40px;
 }
+
+.image_city1 {
+  background-image: url("../images/city1.jpg");
+  width: 300px;
+  height: 220px;
+  margin-left: 25px;
+  background-repeat: round;
+}
+
+.image_city2 {
+  background-image: url("../images/city2.jpg");
+  width: 300px;
+  height: 220px;
+  margin-left: 25px;
+  background-repeat: round;
+}
+
+.image_city3 {
+  background-image: url("../images/city3.jpg");
+  width: 300px;
+  height: 220px;
+  margin-left: 25px;
+  background-repeat: round;
+}

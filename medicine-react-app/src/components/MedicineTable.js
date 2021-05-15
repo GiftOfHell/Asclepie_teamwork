@@ -37,8 +37,11 @@ class MedicineTable extends React.Component {
                 <a href="#">{medicine.amount1}</a>
               ))}
             </p>
-            <p class="price">
-              <del>95.00</del> &mdash; $55.00
+            <p>
+              Price:{" "}
+              {this.state.medicines.map((medicine) => (
+                <a href="#">{medicine.price1}</a>
+              ))}
             </p>
             <p>
               Address:{" "}
@@ -64,7 +67,12 @@ class MedicineTable extends React.Component {
                 <a href="#">{medicine.amount2}</a>
               ))}
             </p>
-            <p class="price">$70.00</p>
+            <p>
+              Price:{" "}
+              {this.state.medicines.map((medicine) => (
+                <a href="#">{medicine.price1}</a>
+              ))}
+            </p>
             <p>
               Address:{" "}
               {this.state.medicines.map((medicine) => (
@@ -89,7 +97,12 @@ class MedicineTable extends React.Component {
                 <a href="#">{medicine.amount3}</a>
               ))}
             </p>
-            <p class="price">$120.00</p>
+            <p>
+              Price:{" "}
+              {this.state.medicines.map((medicine) => (
+                <a href="#">{medicine.price1}</a>
+              ))}
+            </p>
             <p>
               Address:{" "}
               {this.state.medicines.map((medicine) => (
@@ -98,7 +111,6 @@ class MedicineTable extends React.Component {
             </p>
           </div>
         </div>
-        ;
         <div class="row mt-5">
           <div class="col-12 text-center">
             <button

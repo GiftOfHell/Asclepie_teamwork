@@ -106,6 +106,9 @@
           "address1" : {
             "type" : "string"
           },
+          "price1" : {
+            "type" : "string"
+          },
           "name2" : {
             "type" : "string"
           },
@@ -115,6 +118,9 @@
           "address2" : {
             "type" : "string"
           },
+          "price2" : {
+            "type" : "string"
+          },
           "name3" : {
             "type" : "string"
           },
@@ -122,6 +128,9 @@
             "type" : "string"
           },
           "address3" : {
+            "type" : "string"
+          },
+          "price3" : {
             "type" : "string"
           }
         }
@@ -148,9 +157,6 @@
           "address1" : {
             "type" : "string"
           },
-          "image1" : {
-            "type" : "string"
-          },
           "country2" : {
             "type" : "string"
           },
@@ -163,9 +169,6 @@
           "address2" : {
             "type" : "string"
           },
-          "image2" : {
-            "type" : "string"
-          },
           "country3" : {
             "type" : "string"
           },
@@ -176,9 +179,6 @@
             "type" : "string"
           },
           "address3" : {
-            "type" : "string"
-          },
-          "image3" : {
             "type" : "string"
           }
         }
